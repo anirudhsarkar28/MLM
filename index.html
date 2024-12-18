@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta author="Author - Anirudh Sarkar & Shashank Sharma">
+    <meta description="MLM Network Structure">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLM Network</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>MLM Network</h1>
+
+        <!-- Navigation Bar -->
+        <div class="navbar">
+            <ul>
+                <li><a href="javascript:void(0);" class="tab-link active" onclick="openForm('addDistributor')">Add Distributor</a></li>
+                <li><a href="javascript:void(0);" class="tab-link" onclick="openForm('addRelationship')">Add Relationship</a></li>
+                <li><a href="javascript:void(0);" class="tab-link" onclick="openForm('updateSales')">Update Sales</a></li>
+                <li><a href="javascript:void(0);" class="tab-link" onclick="openForm('calculateCommissions')">Calculate Commissions</a></li>
+                <li><a href="javascript:void(0);" class="tab-link" onclick="openForm('printNetwork')">Print Network</a></li>
+                <li><a href="javascript:void(0);" class="tab-link" onclick="openForm('deleteDistributor')">Delete Distributor</a></li>
+                <li><a href="javascript:void(0);" class="tab-link" onclick="openForm('updateRelationship')">Update Relationship</a></li>
+            </ul>
+        </div>
+
+        <!-- Form Container -->
+        <div class="form-container">
+            <!-- Add Distributor Form -->
+            <div id="addDistributor" class="form-content">
+                <h2>Add Distributor</h2>
+                <label for="distributor-id">Distributor ID:</label>
+                <input type="number" id="distributor-id" placeholder="Enter distributor ID">
+                <label for="distributor-name">Distributor Name:</label>
+                <input type="text" id="distributor-name" placeholder="Enter distributor name">
+                <button onclick="addDistributor()">Add Distributor</button>
+            </div>
+
+            <!-- Add Relationship Form -->
+            <div id="addRelationship" class="form-content" style="display: none;">
+                <h2>Add Relationship</h2>
+                <label for="parent-id">Parent Distributor ID:</label>
+                <input type="number" id="parent-id" placeholder="Enter parent distributor ID">
+                <label for="child-id">Child Distributor ID:</label>
+                <input type="number" id="child-id" placeholder="Enter child distributor ID">
+                <button onclick="addRelationship()">Add Relationship</button>
+            </div>
+
+            <!-- Update Sales Form -->
+            <div id="updateSales" class="form-content" style="display: none;">
+                <h2>Update Sales</h2>
+                <label for="sales-id">Distributor ID for Sales:</label>
+                <input type="number" id="sales-id" placeholder="Enter distributor ID">
+                <label for="sales-amount">Sales Amount:</label>
+                <input type="number" id="sales-amount" placeholder="Enter sales amount">
+                <button onclick="updateSales()">Update Sales</button>
+            </div>
+
+            <!-- Calculate Commissions Button -->
+            <div id="calculateCommissions" class="form-content" style="display: none;">
+                <h2>Calculate Commissions</h2>
+                <button onclick="calculateCommissions()">Calculate Commissions</button>
+            </div>
+
+            <!-- Print Network Button -->
+            <div id="printNetwork" class="form-content" style="display: none;">
+                <h2>Print Network</h2>
+                <button onclick="printNetwork()">Print Network</button>
+            </div>
+
+            <!-- Delete Distributor Form -->
+            <div id="deleteDistributor" class="form-content" style="display: none;">
+                <h2>Delete Distributor</h2>
+                <label for="delete-id">Distributor ID to Delete:</label>
+                <input type="number" id="delete-id" placeholder="Enter distributor ID to delete">
+                <button onclick="deleteDistributor()">Delete Distributor</button>
+            </div>
+
+            <!-- Update Relationship Form -->
+            <div id="updateRelationship" class="form-content" style="display: none;">
+                <h2>Update Relationship</h2>
+                <label for="old-parent-id">Old Parent Distributor ID:</label>
+                <input type="number" id="old-parent-id" placeholder="Enter old parent distributor ID">
+                <label for="new-parent-id">New Parent Distributor ID:</label>
+                <input type="number" id="new-parent-id" placeholder="Enter new parent distributor ID">
+                <label for="update-child-id">Child Distributor ID:</label>
+                <input type="number" id="update-child-id" placeholder="Enter child distributor ID">
+                <button onclick="updateRelationship()">Update Relationship</button>
+            </div>
+        </div>
+
+        <div id="output" class="output">
+            <!-- Output messages will appear here -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="background-color: lightblue; color: white; text-align: center; 
+            padding: 10px; font-size: 16px; position: fixed; bottom: 0; width: 100%;">
+    Site made by Anirudh Sarkar & Shashank Sharma
+</div>
+
+    <script src="mlm.js"></script>
+</body>
+</html>
